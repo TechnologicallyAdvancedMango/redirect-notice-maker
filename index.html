@@ -11,12 +11,8 @@
     <script>
       function createRedirect() {
         var inputValue = document.getElementById("input").value;
-        var redirectUrl = "https://example.com/redirect?target=" + encodeURIComponent(inputValue);
-        var anchor = document.createElement("a");
-        anchor.href = redirectUrl;
-        anchor.textContent = "Click here to proceed";
-        document.getElementById("redirectLink").innerHTML = "";
-        document.getElementById("redirectLink").appendChild(anchor);
+        var redirectUrl = "https://www.google.com/url?q=" + encodeURIComponent(inputValue) + "&sa=D&source=docs&ust=1718044971553368&usg=AOvVaw0OVQVcdKDOD4YP3dncFSxe&safe=active&surl=1";
+        document.getElementById("redirectLink").textContent = redirectUrl;
       }
     </script>
   </body>
