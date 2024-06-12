@@ -12,7 +12,11 @@
       function createRedirect() {
         var inputValue = document.getElementById("input").value;
         var redirectUrl = "https://example.com/redirect?target=" + encodeURIComponent(inputValue);
-        document.getElementById("redirectLink").textContent = "Click <a href='" + redirectUrl + "'>here</a> to proceed.";
+        var anchor = document.createElement("a");
+        anchor.href = redirectUrl;
+        anchor.textContent = "Click here to proceed";
+        document.getElementById("redirectLink").innerHTML = "";
+        document.getElementById("redirectLink").appendChild(anchor);
       }
     </script>
   </body>
