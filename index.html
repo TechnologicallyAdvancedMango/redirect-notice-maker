@@ -1,27 +1,19 @@
 <!doctype html>
 <html>
   <head>
-    <title>Redirect Notice Maker</title>
+    <title>Custom Redirect Notice</title>
   </head>
   <body>
-    <h1>Redirect Notice Maker</h1>
+    <h1>Custom Redirect Notice Maker</h1>
     <input id="input" type="text">
-    <label for="input">link</label>
-    <p id="finalLink"></p>
+    <button onclick="createRedirect()">Create Redirect</button>
+    <p id="redirectLink"></p>
     <script>
-      // Get the input element
-      var inputElement = document.getElementById("input");
-      // Get the output element
-      var outputElement = document.getElementById("finalLink");
-
-      // Listen for input changes
-      inputElement.addEventListener("input", function() {
-        var inputValue = inputElement.value;
-        // Construct the output URL
-        var outputUrl = "https://www.google.com/url?q=" + inputValue + "&sa=D&source=docs&ust=1718044971553368&usg=AOvVaw0OVQVcdKDOD4YP3dncFSxe&safe=active&surl=1";
-        // Update the output element
-        outputElement.textContent = outputUrl;
-      });
+      function createRedirect() {
+        var inputValue = document.getElementById("input").value;
+        var redirectUrl = "https://example.com/redirect?target=" + encodeURIComponent(inputValue);
+        document.getElementById("redirectLink").textContent = "Click <a href='" + redirectUrl + "'>here</a> to proceed.";
+      }
     </script>
   </body>
 </html>
